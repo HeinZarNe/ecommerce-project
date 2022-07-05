@@ -5,10 +5,12 @@ import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="max-w-[1240px] md_px-10 md_m-auto">
       <NavBar />
-      <ImageCarousal/>
-      <Description/>
+      <div className="md_flex">
+        <ImageCarousal />
+        <Description />
+      </div>
     </div>
   );
 }
