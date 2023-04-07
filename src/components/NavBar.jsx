@@ -6,7 +6,9 @@ const NavBar = () => {
   const [menuOn, setMenuOn] = useState(false);
   const [cartOn, setCartOn] = useState(false);
   const cart = useSelector((store) => store.quantity);
-
+  const NavBtn =
+    "mx-5 text-darkgrayblue text-sm hover_border-2 hover_border-t-0 hover_border-l-0 hover_border-r-0 hover_border-b-orange pe-auto";
+  const NavBtns = ["Collections", "Men", "Women", "About", "Contact"];
   return (
     <>
       <div className="flex  justify-between p-5   md_border-b-2 md_border-b-gray_blue md_py-9 md_px-0 items-center w-100vw ">
@@ -15,25 +17,16 @@ const NavBar = () => {
             src="./images/icon-menu.svg"
             className="cursor-pointer mr-3 md_hidden"
             alt="menu"
+            role="button"
             onClick={(_) => setMenuOn(!menuOn)}
           />
-          <img src="./images/logo.svg" alt="logo" className=" " />
+          <img src="./images/logo.svg" alt="logo" role="button" />
           <div className="hidden justify-center items-center ml-16 md_flex">
-            <span className="mx-5 text-darkgrayblue text-sm hover_border-2 hover_border-t-0 hover_border-l-0 hover_border-r-0 hover_border-b-orange">
-              Collections
-            </span>
-            <span className="mx-5 text-darkgrayblue text-sm hover_border-2 hover_border-t-0 hover_border-l-0 hover_border-r-0 hover_border-b-orange">
-              Men
-            </span>
-            <span className="mx-5 text-darkgrayblue text-sm hover_border-2 hover_border-t-0 hover_border-l-0 hover_border-r-0 hover_border-b-orange">
-              Women
-            </span>
-            <span className="mx-5 text-darkgrayblue text-sm hover_border-2 hover_border-t-0 hover_border-l-0 hover_border-r-0 hover_border-b-orange">
-              About
-            </span>
-            <span className="mx-5 text-darkgrayblue text-sm hover_border-2 hover_border-t-0 hover_border-l-0 hover_border-r-0 hover_border-b-orange">
-              Contact
-            </span>
+            {NavBtns.map((navBtn, i) => (
+              <span key={i} className={NavBtn} role="button">
+                {navBtn}
+              </span>
+            ))}
           </div>
         </div>
 

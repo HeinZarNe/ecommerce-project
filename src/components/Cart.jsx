@@ -6,14 +6,13 @@ const Cart = () => {
   const quantity = useSelector((store) => store.quantity);
   const dispatch = useDispatch();
   return (
-    <div className="absolute p-2 top-[64px] z-[99] right-[90px] md_w-[30%] w-screen">
-      <div className="bg-white rounded-lg flex items-center flex-col">
+    <div className="absolute  md_top-[110px] z-[99] md_right-[2.5rem] md_w-[40%] w-screen border-2 border-grayblue rounded-md ">
+      <div className="bg-white rounded-md flex items-center flex-col">
         <span className="text-black text-xl font-bold p-6 w-full border-b-2 border-b-grayblue  ">
           Cart
         </span>
         {quantity > 0 ? (
           <>
-            {" "}
             <div className="p-6 w-full flex justify-between items-center">
               <div className="flex items-center">
                 <img
@@ -32,6 +31,7 @@ const Cart = () => {
                 </div>
               </div>
               <img
+                className="cursor-pointer"
                 src="./images/icon-delete.svg"
                 alt="/"
                 onClick={(_) => dispatch(actions.delete())}

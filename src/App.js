@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div className="max-w-[1240px] md_px-10 md_m-auto">
+    <div className="max-w-[1240px] md_px-10 md_m-auto relative">
       <NavBar />
       <div className="md_flex">
         <ImageCarousal />

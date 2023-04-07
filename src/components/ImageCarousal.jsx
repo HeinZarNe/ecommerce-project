@@ -27,13 +27,13 @@ const ImageCarousal = () => {
           <div
             key={i}
             className={` ${
-              currentId == i ? "border-2 border-orange " : ""
+              currentId === i ? "border-2 border-orange " : ""
             } rounded-lg w-[20%]`}
             onClick={(_) => setCurrentId(i)}
           >
             <img
               className={`${
-                currentId == i ? " opacity-40" : ""
+                currentId === i ? " opacity-40" : ""
               } w-full h-[80px] rounded-lg  `}
               src={images[i]}
               alt="product"
@@ -51,7 +51,7 @@ const ImageCarousal = () => {
       <div
         className="absolute top-[45%] flex items-center  justify-center right-8 pl-3 pr-3 py-3 bg-white
     rounded-[50%] md_hidden"
-        onClick={(_) => currentId != 3 && setCurrentId(currentId + 1)}
+        onClick={(_) => currentId !== 3 && setCurrentId(currentId + 1)}
       >
         <img src="./images/icon-next.svg" alt="icon" />
       </div>

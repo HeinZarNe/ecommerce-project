@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import CartIcon from "../assets/icon-cart";
 import { actions } from "../store";
 
 const Description = () => {
   const [quantity, setQuantity] = useState(0);
-  const store = useSelector((store) => store.quantity);
   const dispatch = useDispatch();
   return (
     <div className="p-5 md_w-[50%] md_p-[50px] md_py-[100px]  ">
@@ -43,11 +42,17 @@ const Description = () => {
         />
       </div>
       <div
-        className="flex bg-orange hover_bg-opacity-70 items-center justify-center w-full rounded-md py-3"
+        className={
+          quantity === 0
+            ? "bg-darkgrayblue flex items-center justify-center w-full rounded-md py-3 cursor-default"
+            : "bg-orange flex  hover_bg-opacity-70 items-center justify-center w-full rounded-md py-3 cursor-pointer"
+        }
         onClick={(_) => dispatch(actions.update(quantity))}
       >
         <CartIcon />
-        <span className="font-bold text-lg text-white ml-3">Add to cart</span>
+        <span className="font-bold text-lg text-white ml-3 cursor-pointer">
+          Add to cart
+        </span>
       </div>
     </div>
   );

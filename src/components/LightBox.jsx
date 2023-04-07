@@ -29,13 +29,13 @@ const LightBox = ({ on }) => {
             <div
               key={i}
               className={` ${
-                currentId == i ? "border-2 border-orange " : ""
+                currentId === i ? "border-2 border-orange " : ""
               } rounded-lg w-[20%]`}
               onClick={(_) => setCurrentId(i)}
             >
               <img
                 className={`${
-                  currentId == i ? " opacity-40" : ""
+                  currentId === i ? " opacity-40" : ""
                 } w-full h-[80px] rounded-lg  `}
                 src={images[i]}
                 alt="product"
